@@ -1,0 +1,23 @@
+<?php
+if(isset($_post['coloum1']))
+{
+    $data=$_post['coloum1'];
+    $fp=fopen(data.txt,'a');
+    fwrite($fp,$data);
+    fclose($fp);
+}
+if(isset($_post['coloum2']))
+{
+    $data=$_post['coloum2'];
+    $fp=fopen(data.txt,'a');
+    fwrite($fp,$data);
+    fclose($fp);
+}
+if(isset($_post['coloum3']))
+{
+    $data=$_post['coloum3'];
+    $fp=fopen(data.txt,'a');
+    fwrite($fp,$data);
+    fclose($fp);
+}
+?>

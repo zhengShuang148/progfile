@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DESKTOP PUBLISHING Attendance checking</title>
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.6.4.js"> </script>
+  <img src="data:image/png;base64,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">
+  <h1 id="title">CENTURION UNIVERSITY</h1>
+  <h3 id="title">Attendance Management</h3>
+  <td>
+    <div id="this" class="col-md-2">Date: Start Date <br>  <input type="date" id="imark" value="">
+  </td>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h3>Course Name: DESKTOP PUBLISHING</h3>
+  Topic Covered <input type="text" id="input">
+<form method="post">
+<table id="dktp" border="2px">
+  <tr align="left">
+    <td width="200px"style="text-align: center;" classname="coloum1">
+      STUDENT NAME
+    </td>
+<td width="200px"style="text-align: center;"classname="coloum2">
+ REGISTRATION NO.
+</td>
+<td width="200px"style="text-align: center;"classname="coloum3">
+ PRESENT/ABSENT
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      SK REENA SULTANA
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370064
+</td>
+<td width="100px">
+<input type="checkbox" class="checkbox-item"> 
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      A RISHITHA
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370065
+</td>
+<td width="100px">
+<input type="checkbox"class="checkbox-item">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      M ROHITH
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370066
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      Y SAI
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370067
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      P SAI GOWTHAM
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370068
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+     G SAI TEJA
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370071
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+     T SAI VARDHAN
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370072
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+    M S K VIKRAM
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370074
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+     Y SOMESH
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370075
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      G SRAVANI
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370076
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+    M SAMMY
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370077
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+     T SRAVANI
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370078
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+     A SRAVANTHI
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370079
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      R SRIVENKAT
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370080
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      R S S HARSHAVARDHAN
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370081
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+     D SURENDRANADH
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370082
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+     M S V SANDEEP
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370083
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      G SWAROOP
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370084
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      T TARUNKUMAR
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370085
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+     G TEJA SAI MANIKANTA
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370086
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      M B TEJASRI
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370087
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      CH VAMSI
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370088
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      P VANDHANA
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370090
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      R VASANTA KUMARI
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370091
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      R VASUDEVA
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370092
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+    N VENKATA AKHIL
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370093
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+     K VENKATA KARTIK
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370094
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      A VENKAT RAMESH
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370095
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      Y VENKY
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370097
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      P VIJAY KUMAR
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370098
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr> 
+  <tr align="left">
+    <td width="200px">
+    S VIJAY KUMAR
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370099
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr> 
+  <tr align="left">
+    <td width="200px">
+      O VISHNU VARMA
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370101
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      G VIVEK
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370102
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>  
+  <tr align="left">
+    <td width="200px">
+     K GANESH
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370103
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>  
+  <tr align="left">
+    <td width="200px">
+     Y KHAGESHWARRAO
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370104
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>  
+  <tr align="left">
+    <td width="200px">
+      S V KISHORE
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370105
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>  
+  <tr align="left">
+    <td width="200px">
+     Y CHIRU SUDHEENDRA
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370107
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr> 
+  <tr align="left">
+    <td width="200px">
+      P NITHIN SAI
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370108
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>
+  <tr align="left">
+    <td width="200px">
+      B NOHITH KUMAR
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370109
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr> 
+  <tr align="left">
+    <td width="200px">
+    D NARAYAN
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370110
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>   
+  <tr align="left">
+    <td width="200px">
+   K NIKHIL
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370111
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr> 
+  <tr align="left">
+    <td width="200px">
+    V LOKESH
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370112
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr> 
+  <tr align="left">
+    <td width="200px">
+  U SOWMYA
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370113
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>  
+  <tr align="left">
+    <td width="200px">
+   J YOGINI
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370114
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr> 
+  <tr align="left">
+    <td width="200px">
+    G GNANESWARA RAO
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370115
+</td>
+<td width="100px">
+<input type="checkbox">
+
+</td>
+  </tr> 
+  <tr align="left">
+    <td width="200px">
+    T SAI BHARATH
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370116
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr> 
+  <tr align="left">
+    <td width="200px">
+   K SARADHAMBICA
+    </td>
+<td width="200px"style="text-align: center;">
+ 211801370117
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr> 
+  <tr align="left">
+    <td width="200px">
+    N KULASEKHAR REDDY
+    </td>
+<td width="200px" style="text-align: center;">
+ 211801370119 
+</td>
+<td width="100px">
+<input type="checkbox">
+</td>
+  </tr>                       
+</table>
+<input type="submit" name="submit" onclick="myfunction">
+</form>
+<style>
+
+  #dktp{
+    margin-top: 80px;
+    margin-left: auto;
+     margin-right: auto; 
+    background-color: aliceblue;
+    width: 1000px;
+   
+  }
+ img{
+  height: 150px;
+  float: right;
+ }
+ #title{
+color: rgba(174, 11, 11, 0.875);
+text-align: center;
+text-decoration: underline;
+font-style: italic;
+ }
+.ui-datepicker{
+  margin-right: 100px;
+  z-index: 1000;
+}
+input[type=submit]{
+    border-color: aqua;
+    box-shadow: 0 0 8px o dodgerBlue;
+    width: 6%;
+    top: 60px;
+    border-radius: 4px;
+   float: right;
+   padding: 8px;
+   background-color: rgb(121, 214, 214);
+  }
+</style>
+<button onclick="ckeckAll()">check All</button>
+</script>
+</body>
+</html>
